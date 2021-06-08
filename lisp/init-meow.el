@@ -104,6 +104,7 @@
    '("<escape>" . meow-last-buffer)))
 
 (use-package meow
+  :ensure t
   :demand t
   :init
   (meow-global-mode 1)

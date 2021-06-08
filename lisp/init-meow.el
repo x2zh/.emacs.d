@@ -43,7 +43,7 @@
    '("1" . meow-expand-1)
    '("-" . negative-argument)
    '(";" . meow-reverse)
-   '("," . meow-inner-of-thing)
+   ;; '("," . meow-inner-of-thing)
    '("." . meow-bounds-of-thing)
    '("[" . meow-beginning-of-thing)
    '("]" . meow-end-of-thing)
@@ -112,7 +112,12 @@
   (meow-setup)
   (meow-setup-line-number)
   (meow-setup-indicator))
-
+(use-package key-chord
+  :ensure t
+  :config
+  (key-chord-mode 1)
+  (key-chord-define-global ",." (kbd "<escape>"))
+  (key-chord-define-global "9o" "("))
 (provide 'init-meow)
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 ;;; init-meow.el ends here

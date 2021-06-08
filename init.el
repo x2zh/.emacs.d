@@ -80,7 +80,8 @@
 (global-set-key (kbd "<f5>") 'eval-buffer)
 
 
-
+(unless (file-exists-p "~/.emacs.d/emacs-custom.el")
+  (make-directory "~/.emacs.d/emacs-custom.el"))
 (setq custom-file "~/.emacs.d/emacs-custom.el")
 (load custom-file)
 (provide 'init)

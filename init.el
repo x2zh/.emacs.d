@@ -59,7 +59,10 @@
   :ensure t
   :init (counsel-mode 1))
 
-
+(use-package which-key
+  :ensure t
+  :config
+  (which-key-mode 1))
 
 ;; Buffer Management
 (use-package ibuffer

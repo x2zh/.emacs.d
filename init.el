@@ -46,13 +46,9 @@
 
 (use-package ivy-rich
   :ensure t
+  :after (ivy counsel swiper)
   :config
   (ivy-rich-mode 1))
-
-
-(use-package all-the-icons-ivy-rich
-  :ensure t
-  :init (all-the-icons-ivy-rich-mode 1))
 
 
 (use-package swiper
@@ -69,9 +65,6 @@
 (use-package ibuffer
   :ensure t
   :bind (("C-x C-b" . ibuffer)))
-(use-package all-the-icons-ibuffer
-  :ensure t
-  :init (all-the-icons-ibuffer-mode 1))
 
 (use-package avy
   :ensure t

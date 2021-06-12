@@ -8,23 +8,38 @@
                          ("melpa" . "http://mirrors.tuna.tsinghua.edu.cn/elpa/melpa/")))
 (package-initialize)
 
-(add-hook 'after-init-hook '(lambda () (toggle-frame-maximized)))
-
 (add-to-list 'load-path "~/.emacs.d/lisp/")
 
 (require 'init-package)
 (require 'init-meow)
 (require 'init-pl)
 
+
 (require 'use-package)
 (use-package emacs
-  :init
+  :config
   (setq scroll-conservatively 2)
   (setq inhibit-startup-screen 1)
   (setq-default cursor-type 'bar)
   (setq make-backup-files nil)
   (setq ring-bell-function 'ignore)
-  (global-linum-mode 1))
+  (setq display-line-numbers-type 'relative)
+  (global-display-line-numbers-mode t)
+  (global-hl-line-mode 1))
+
+(use-package restart-emacs
+  :ensure)
+
+(use-package doom-themes
+  :ensure t
+  :config
+  (setq doom-themes-enable-bold t
+	doom-themes-enable-italic t)
+  (load-theme 'doom-one-light t))
+
+(use-package gruvbox-theme
+  :ensure t
+  :config)
 
 (use-package exec-path-from-shell
   :ensure t

@@ -18,6 +18,7 @@
 (require 'use-package)
 (use-package emacs
   :config
+  (load-theme 'modus-operandi t)
   (setq scroll-conservatively 2)
   (setq inhibit-startup-screen 1)
   (setq-default cursor-type 'bar)
@@ -37,10 +38,10 @@
 ;; 	doom-themes-enable-italic t)
 ;;   (load-theme 'doom-gruvbox-light t))
 
-(use-package gruvbox-theme
-  :ensure t
-  :config
-  (load-theme 'gruvbox-light-soft t))
+;; (use-package gruvbox-theme
+;;   :ensure t
+;;   :config
+;;   (load-theme 'gruvbox-light-soft t))
 
 (use-package exec-path-from-shell
   :ensure t

@@ -11,7 +11,7 @@
   :ensure t
   :config
   (key-chord-mode 1)
-  (key-chord-define-global ",." 'keyboard-quit))
+  (key-chord-define-global ",." (kbd "C-g")))
 (provide 'init-meow)
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 ;;; init-meow.el ends here

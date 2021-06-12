@@ -30,16 +30,17 @@
 (use-package restart-emacs
   :ensure)
 
-(use-package doom-themes
-  :ensure t
-  :config
-  (setq doom-themes-enable-bold t
-	doom-themes-enable-italic t)
-  (load-theme 'doom-one-light t))
+;; (use-package doom-themes
+;;   :ensure t
+;;   :config
+;;   (setq doom-themes-enable-bold t
+;; 	doom-themes-enable-italic t)
+;;   (load-theme 'doom-gruvbox-light t))
 
 (use-package gruvbox-theme
   :ensure t
-  :config)
+  :config
+  (load-theme 'gruvbox-light-soft t))
 
 (use-package exec-path-from-shell
   :ensure t
@@ -94,7 +95,13 @@
   (interactive)
   (find-file "~/.emacs.d/init.el"))
 
-(global-set-key (kbd "s-;") 'open-emacs-settings)
+(use-package crux
+  :ensure t
+  :bind
+  (("C-a" . crux-move-beginning-of-line)
+   ("s-;" . crux-find-user-init-file)))
+
+;; (global-set-key (kbd "s-;") 'open-emacs-settings)
 (global-set-key (kbd "<f5>") 'eval-buffer)
 
 

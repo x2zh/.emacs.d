@@ -24,7 +24,7 @@
   (setq-default cursor-type 'bar)
   (setq make-backup-files nil)
   (setq ring-bell-function 'ignore)
-  (setq display-line-numbers-type 'relative)
+  (setq display-line-numbers-type t)
   (global-display-line-numbers-mode t)
   (global-hl-line-mode 1))
 
@@ -41,13 +41,38 @@
 ;;   (load-theme 'gruvbox-light-soft t))
 
 
+
 ;; window mangement
+(use-package window
+  :ensure nil
+  :custom
+  (display-buffer-alist
+   '(("\\*e?shell\\*"
+      ;; note sample with more functions, executed sequentially
+      (display-buffer-in-side-window)
+      (window-height . 0.25)
+      (side . bottom)
+      (slot . -1))
+     ("\\*\\(BackTrace\\|Warnings\\|Compile-Log\\|[Hh]elp\\|Messages\\)\\*"
+      (display-buffer-in-side-window)
+      (window-height . 0.25)
+      (side . bottom)
+      (slot . 1)))))
+
 (use-package ace-window
   :bind (("M-o" . ace-window)))
 
+(use-package winner
+  :ensure nil
+  :hook (after-init . winner-mode)
+  :bind (("<s-right>" . winner-redo)
+	 ("<s-left>" . winner-undo)))
+
+
 (use-package which-key
   :config
-  (which-key-mode 1))
+  (which-key-mode 1)
+  (which-key-setup-minibuffer))
 
 ;; Buffer Management
 (use-package ibuffer

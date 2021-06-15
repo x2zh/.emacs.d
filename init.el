@@ -18,7 +18,7 @@
 (require 'use-package)
 (use-package emacs
   :config
-  (load-theme 'modus-operandi t)
+  ;; (load-theme 'modus-operandi t)
   (setq scroll-conservatively 2)
   (setq inhibit-startup-screen 1)
   (setq-default cursor-type 'bar)
@@ -36,9 +36,9 @@
 ;; 	doom-themes-enable-italic t)
 ;;   (load-theme 'doom-gruvbox-light t))
 
-;; (use-package gruvbox-theme
-;;   :config
-;;   (load-theme 'gruvbox-light-soft t))
+(use-package gruvbox-theme
+  :config
+  (load-theme 'gruvbox-dark-hard t))
 
 
 
@@ -50,12 +50,12 @@
    '(("\\*e?shell\\*"
       ;; note sample with more functions, executed sequentially
       (display-buffer-in-side-window)
-      (window-height . 0.25)
+      (window-height . 0.382)
       (side . bottom)
       (slot . -1))
      ("\\*\\(BackTrace\\|Warnings\\|Compile-Log\\|[Hh]elp\\|Messages\\)\\*"
       (display-buffer-in-side-window)
-      (window-height . 0.25)
+      (window-height . 0.382)
       (side . bottom)
       (slot . 1)))))
 

@@ -23,6 +23,8 @@
 ;; windows 平台的特殊配置
 (if (eq system-type 'windows-nt)
     (require 'init-windows-nt))
+;; org-mode 配置
+(require 'init-org)
 
 (require 'use-package)
 (use-package emacs

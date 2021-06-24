@@ -7,16 +7,38 @@
 
 (require 'use-package)
 
-(use-package xah-fly-keys
+(defun meow-setup ()
+  (setq meow-cheatsheet-layout meow-cheatsheet-layout-qwerty)
+  (meow-motion-overwrite-define-key
+   '("k" . meow-next)
+   '("i" . meow-prev))
+  (meow-leader-define-key
+   '("?" . meow-cheatsheet)
+   '("b" . consult-buffer)
+   '("g" . magit-status))
+  (meow-normal-define-key
+   '("j" . meow-left)
+   '("l" . meow-right)
+   '("i" . meow-prev)
+   '("k" . meow-next)
+   '("f" . meow-insert)
+   '("n" . meow-search)
+   '("a" . meow-M-x)
+   '("y" . meow-undo)))
+
+(use-package meow
+  :demand t
+  :init
+  (meow-global-mode 1)
   :config
-  (xah-fly-keys-set-layout "qwerty"))
+  (meow-setup)
+  (meow-setup-indicator))
 
 (use-package key-chord
   :ensure t
   :config
   (key-chord-mode 1)
-  (key-chord-define-global ",." 'keyboard-quit)
-  (key-chord-define-global " b" 'consult-buffer))
+  (key-chord-define-global ",." (kbd "<escape>")))
 (provide 'init-meow)
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 ;;; init-meow.el ends here

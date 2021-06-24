@@ -14,8 +14,10 @@
 (require 'use-package)
 (setq use-package-always-ensure t)
 
-(use-package exec-path-from-shell
-  :init (exec-path-from-shell-initialize))
+(if (eq system-type 'darwin)
+    (use-package exec-path-from-shell
+      :init (exec-path-from-shell-initialize)))
+
 
 (provide 'init-package)
 

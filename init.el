@@ -20,6 +20,10 @@
 ;; (require 'init-ivy-pack)
 (require 'init-vertico-pack)
 
+;; windows 平台的特殊配置
+(if (eq system-type 'windows-nt)
+    (require 'init-windows-nt))
+
 (require 'use-package)
 (use-package emacs
   :config
@@ -48,21 +52,23 @@
 
 
 ;; window mangement
-(use-package window
-  :ensure nil
-  :custom
-  (display-buffer-alist
-   '(("\\*e?shell\\*"
-      ;; note sample with more functions, executed sequentially
-      (display-buffer-in-side-window)
-      (window-height . 0.382)
-      (side . bottom)
-      (slot . -1))
-     ("\\*\\(BackTrace\\|Warnings\\|Compile-Log\\|[Hh]elp\\|Messages\\)\\*"
-      (display-buffer-in-side-window)
-      (window-height . 0.382)
-      (side . bottom)
-      (slot . 1)))))
+(if (>= emacs-major-version 28)
+    (use-package window
+      :ensure nil
+      :custom
+      (display-buffer-alist
+       '(("\\*e?shell\\*"
+	  ;; note sample with more functions, executed sequentially
+	  (display-buffer-in-side-window)
+	  (window-height . 0.382)
+	  (side . bottom)
+	  (slot . -1))
+	 ("\\*\\(BackTrace\\|Warnings\\|Compile-Log\\|[Hh]elp\\|Messages\\)\\*"
+	  (display-buffer-in-side-window)
+	  (window-height . 0.382)
+	  (side . bottom)
+	  (slot . 1))))))
+
 
 (use-package ace-window
   :bind (("M-o" . ace-window)))

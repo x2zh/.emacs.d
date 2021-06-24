@@ -119,6 +119,8 @@
 (use-package consult
   :bind
   ("C-x b" . consult-buffer)
+  ("C-s" . consult-line)
+  ("C-M-s" . consult-git-grep)
   :config
   (recentf-mode 1))
 

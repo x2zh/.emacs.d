@@ -39,6 +39,10 @@
   (global-display-line-numbers-mode t)
   (global-hl-line-mode 1))
 
+(use-package modus-themes
+  :config
+  (load-theme 'modus-operandi t))
+
 (use-package restart-emacs)
 
 ;; (use-package doom-themes
@@ -47,9 +51,9 @@
 ;; 	doom-themes-enable-italic t)
 ;;   (load-theme 'doom-gruvbox-light t))
 
-(use-package gruvbox-theme
-  :config
-  (load-theme 'gruvbox-dark-hard t))
+;; (use-package gruvbox-theme
+;;   :config
+;;   (load-theme 'gruvbox-dark-hard t))
 
 
 

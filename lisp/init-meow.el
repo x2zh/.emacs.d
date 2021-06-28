@@ -9,9 +9,7 @@
 
 (defun meow-setup ()
   (setq meow-cheatsheet-layout meow-cheatsheet-layout-qwerty)
-  (meow-motion-overwrite-define-key
-   '("k" . meow-next)
-   '("i" . meow-prev))
+  (meow-motion-overwrite-define-key)
   (meow-leader-define-key
    '("?" . meow-cheatsheet)
    '("b" . consult-buffer)

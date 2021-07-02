@@ -9,13 +9,11 @@
 (package-initialize)
 (add-to-list 'load-path "~/.emacs.d/lisp/")
 
-
-(setq mac-command-modifier 'meta)
-(setq mac-option-modifier 'super)
-
 ;; 做一个测试
 (require 'init-package)
-(require 'init-meow)
+
+(require 'init-basic)
+;; (require 'init-meow)
 (require 'init-pl)
 ;; (require 'init-ivy-pack)
 (require 'init-vertico-pack)

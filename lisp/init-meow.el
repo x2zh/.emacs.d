@@ -12,8 +12,8 @@
   (meow-motion-overwrite-define-key)
   (meow-leader-define-key
    '("?" . meow-cheatsheet)
-   '("b" . consult-buffer)
-   '("g" . magit-status))
+   '("3" . delete-other-windows)
+   '("b" . consult-buffer))
   (meow-normal-define-key
    '("j" . meow-left)
    '("l" . meow-right)

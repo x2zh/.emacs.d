@@ -4,8 +4,7 @@
 (use-package vertico
   :ensure t
   :config
-  (vertico-mode)
-  (setq vertico-cycle t))
+  (vertico-mode))
 
 ;; Use the `orderless' completion style.
 ;; Enable `partial-completion' for files to allow path expansion.

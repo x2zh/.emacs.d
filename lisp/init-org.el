@@ -1,3 +1,4 @@
+;; -*- lexical-binding: t; -*-
 (use-package org-bullets)
 (setq org-log-done 'note)
 (add-hook 'org-mode-hook 'org-bullets-mode)

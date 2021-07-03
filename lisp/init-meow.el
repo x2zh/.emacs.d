@@ -32,11 +32,7 @@
   (meow-setup)
   (meow-setup-indicator))
 
-(use-package key-chord
-  :ensure t
-  :config
-  (key-chord-mode 1)
-  (key-chord-define-global ",." (kbd "<escape>")))
+
 (provide 'init-meow)
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 ;;; init-meow.el ends here

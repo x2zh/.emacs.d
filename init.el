@@ -1,4 +1,4 @@
-;;; init.el --- Iintialization file for Emacs
+;;; init.el --- Iintialization file for Emacs  -*- lexical-binding: t; -*-
 ;;; Commentary:
 ;;; Emacs Startup File --- initialization fro Emacs
 
@@ -13,7 +13,8 @@
 (require 'init-package)
 
 (require 'init-basic)
-;; (require 'init-meow)
+(require 'init-edit)
+(require 'init-modal)
 (require 'init-pl)
 ;; (require 'init-ivy-pack)
 (require 'init-vertico-pack)

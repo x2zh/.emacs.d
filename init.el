@@ -22,26 +22,13 @@
 ;; windows 平台的特殊配置
 (if (eq system-type 'windows-nt)
     (require 'init-windows-nt))
+
 ;; org-mode 配置
 (require 'init-org)
 
-(require 'use-package)
-(use-package emacs
-  :config
-  ;; (load-theme 'modus-operandi t)
-  (setq scroll-conservatively 2)
-  (setq inhibit-startup-screen 1)
-  (setq-default cursor-type 'bar)
-  (setq make-backup-files nil)
-  (setq ring-bell-function 'ignore)
-  (setq display-line-numbers-type t)
-  (global-display-line-numbers-mode t)
-  (show-paren-mode 1)
-  (global-hl-line-mode 1))
+;; 基本的样式和主题配置
+(require 'init-view)
 
-(use-package modus-themes
-  :config
-  (load-theme 'modus-operandi t))
 
 (use-package restart-emacs)
 

@@ -2,10 +2,8 @@
 
 (use-package emacs
   :config
-  ;; (load-theme 'modus-operandi t)
   (setq scroll-conservatively 2)
   (setq inhibit-startup-screen 1)
-  (setq-default cursor-type 'bar)
   (setq make-backup-files nil)
   (setq ring-bell-function 'ignore)
   (setq display-line-numbers-type t)

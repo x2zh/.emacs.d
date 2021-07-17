@@ -19,10 +19,10 @@
   (key-chord-define-global ",." (kbd "<escape>")))
 
 
-(defun my-god-mode-update-cursor-type ()
-  (setq cursor-type (if (or god-local-mode buffer-read-only) 'box 'bar)))
+;; (defun my-god-mode-update-cursor-type ()
+;;   (setq cursor-type (if (or god-local-mode buffer-read-only) 'box 'bar)))
 
-(add-hook 'post-command-hook #'my-god-mode-update-cursor-type)
+;; (add-hook 'post-command-hook #'my-god-mode-update-cursor-type)
 
 (defun my-god-mode-update-mode-line ()
   (cond

@@ -28,7 +28,7 @@
 
 ;; 基本的样式和主题配置
 (require 'init-view)
-
+(require 'init-tools)
 
 (use-package restart-emacs)
 

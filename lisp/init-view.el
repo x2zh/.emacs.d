@@ -17,6 +17,25 @@
   (load-theme 'modus-operandi t))
 
 
+;;; chinese font align settings 
+(use-package cnfonts
+  :config
+  (set-face-attribute
+   'default nil
+   :font (font-spec :name "-*-Fira Code-normal-normal-normal-*-*-*-*-*-m-0-iso10646-1"
+                    :weight 'normal
+                    :slant 'normal
+                    :size 12.5))
+  (dolist (charset '(kana han symbol cjk-misc bopomofo))
+    (set-fontset-font
+     (frame-parameter nil 'font)
+     charset
+     (font-spec :name "-*-Hiragino Sans GB-normal-normal-normal-*-*-*-*-*-p-0-iso10646-1"
+		:weight 'normal
+		:slant 'normal
+		:size 14.0))))
+
+
 (provide 'init-view)
 
 

@@ -13,4 +13,9 @@
 
 (use-package atomic-chrome)
 
+
+(use-package git-gutter
+  :config
+  (add-hook 'prog-mode-hook 'git-gutter-mode))
+
 (provide 'init-edit)

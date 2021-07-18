@@ -120,6 +120,7 @@
   ("C-s" . consult-line)
   ("C-M-s" . consult-git-grep)
   :config
-  (recentf-mode 1))
+  (recentf-mode 1)
+  (consult-customize consult-buffer :preview-key (kbd "M-.")))
 
 (provide 'init-vertico-pack)

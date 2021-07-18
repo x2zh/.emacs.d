@@ -11,4 +11,6 @@
   :bind
   (("C-=" . 'er/expand-region)))
 
+(use-package atomic-chrome)
+
 (provide 'init-edit)

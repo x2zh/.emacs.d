@@ -8,7 +8,15 @@
   :bind
   (("C-=" . 'er/expand-region)))
 
-
+(use-package selected
+  :commands selected-minor-mode
+  :init
+  ;; (selected-global-mode)
+  (add-hook 'prog-mode-hook #'selected-minor-mode)
+  :bind (:map selected-keymap
+              ("u" . upcase-region)
+              ("d" . downcase-region)
+	      (";" . exchange-point-and-mark)))
 
 
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;

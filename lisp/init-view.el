@@ -20,7 +20,9 @@
 ;;; chinese font align settings 
 (use-package cnfonts
   :config
-  (set-face-attribute
+  )
+
+(set-face-attribute
    'default nil
    :font (font-spec :name "-*-Fira Code-normal-normal-normal-*-*-*-*-*-m-0-iso10646-1"
                     :weight 'normal
@@ -33,7 +35,7 @@
      (font-spec :name "-*-Hiragino Sans GB-normal-normal-normal-*-*-*-*-*-p-0-iso10646-1"
 		:weight 'normal
 		:slant 'normal
-		:size 14.0))))
+		:size 14.0)))
 
 
 (provide 'init-view)

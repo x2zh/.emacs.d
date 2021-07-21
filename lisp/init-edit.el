@@ -58,4 +58,10 @@
   :config
   (add-hook 'prog-mode-hook 'git-gutter-mode))
 
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;; encoding
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+
+(set-language-environment "UTF-8")
+
 (provide 'init-edit)

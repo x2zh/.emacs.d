@@ -9,6 +9,9 @@
 (package-initialize)
 (add-to-list 'load-path "~/.emacs.d/lisp/")
 
+(defconst *is-windows (eq system-type 'windows-nt))
+(defconst *is-mac (eq system-type 'darwin))
+
 ;; 做一个测试
 (require 'init-package)
 
@@ -20,7 +23,7 @@
 (require 'init-vertico-pack)
 
 ;; windows 平台的特殊配置
-(if (eq system-type 'windows-nt)
+(if *is-windows
     (require 'init-windows-nt))
 
 ;; org-mode 配置
@@ -30,17 +33,13 @@
 (require 'init-view)
 (require 'init-tools)
 
+
+(require 'init-vc)
+
+;; (require 'init-mini-frame)
 (use-package restart-emacs)
 
-;; (use-package doom-themes
-;;   :config
-;;   (setq doom-themes-enable-bold t
-;; 	doom-themes-enable-italic t)
-;;   (load-theme 'doom-gruvbox-light t))
 
-;; (use-package gruvbox-theme
-;;   :config
-;;   (load-theme 'gruvbox-dark-hard t))
 
 
 

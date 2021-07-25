@@ -22,3 +22,6 @@
   (apply orig-fun args))
 
 (advice-add 'read-from-minibuffer :around #'x2zh-mini-frame-top-function)
+
+
+(provide 'init-mini-frame)

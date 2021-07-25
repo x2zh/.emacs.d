@@ -6,7 +6,7 @@
 
 (use-package expand-region
   :bind
-  (("C-=" . 'er/expand-region)))
+  (("M-=" . 'er/expand-region)))
 
 (use-package selected
   :commands selected-minor-mode
@@ -54,14 +54,28 @@
   (global-set-key (kbd "C-<backspace>") #'hungry-delete-backward)
   (global-set-key (kbd "C-c <backspace>") #'backward-kill-word))
 
-(use-package git-gutter
-  :config
-  (add-hook 'prog-mode-hook 'git-gutter-mode))
+
 
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 ;; encoding
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 
 (set-language-environment "UTF-8")
+
+
+
+
+
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;; view
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+
+(use-package beacon
+  :config
+  (setq-default beacon-lighter "")
+  (setq-default beacon-size 80)
+  (setq beacon-color "#ff0d0d")
+  (add-hook 'after-init-hook 'beacon-mode))
+
 
 (provide 'init-edit)

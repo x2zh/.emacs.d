@@ -13,14 +13,18 @@
   (scroll-bar-mode -1))
 
 (use-package modus-themes
-  :config
-  (load-theme 'modus-operandi t))
+  :config)
+
+(use-package doom-themes)
+
+(use-package gruvbox-theme
+  :config)
+
+(load-theme 'doom-gruvbox t)
 
 
 ;;; chinese font align settings 
-(use-package cnfonts
-  :config
-  )
+(use-package cnfonts)
 
 (set-face-attribute
  'default nil

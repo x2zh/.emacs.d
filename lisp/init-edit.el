@@ -40,12 +40,15 @@
 
 (delete-selection-mode 1)
 
+
 (use-package undo-tree
   :init
   (global-undo-tree-mode 1)
+  :bind
+  (("M-u" . #'undo)
+   ("C-x u" . #'undo-tree-visualize))
   :config
-  (progn
-    (define-key undo-tree-visualizer-mode-map (kbd "RET") 'undo-tree-visualizer-quit)))
+  (define-key undo-tree-visualizer-mode-map (kbd "RET") 'undo-tree-visualizer-quit))
 
 (use-package atomic-chrome)
 

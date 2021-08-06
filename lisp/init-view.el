@@ -20,43 +20,49 @@
 (use-package gruvbox-theme
   :config)
 
-(load-theme 'doom-gruvbox t)
+(load-theme 'modus-operandi t)
 
+
+(use-package doom-modeline
+  :config
+  (setq doom-modeline-height 1)
+  (setq doom-modeline-icon nil)
+  :hook (after-init . doom-modeline-mode))
 
 ;;; chinese font align settings 
-(use-package cnfonts)
+;; (use-package cnfonts)
 
-(set-face-attribute
- 'default nil
- :font (font-spec :name "-outline-Courier New-bold-italic-normal-mono-*-*-*-*-c-*-iso10646-1"
-                  :weight 'normal
-                  :slant 'normal
-                  :size 10.0))
-(dolist (charset '(kana han symbol cjk-misc bopomofo))
-  (set-fontset-font
-   (frame-parameter nil 'font)
-   charset
-   (font-spec :name "-outline-微软雅黑-normal-normal-normal-sans-*-*-*-*-p-*-iso10646-1"
-              :weight 'normal
-              :slant 'normal
-              :size 12.0)))
+;; (set-face-attribute
+;;  'default nil
+;;  :font (font-spec :name "-outline-Courier New-bold-italic-normal-mono-*-*-*-*-c-*-iso10646-1"
+;;                   :weight 'normal
+;;                   :slant 'normal
+;;                   :size 10.0))
+;; (dolist (charset '(kana han symbol cjk-misc bopomofo))
+;;   (set-fontset-font
+;;    (frame-parameter nil 'font)
+;;    charset
+;;    (font-spec :name "-outline-微软雅黑-normal-normal-normal-sans-*-*-*-*-p-*-iso10646-1"
+;;               :weight 'normal
+;;               :slant 'normal
+;;               :size 12.0)))
 
-(unless (eq system-type 'windows-nt)
-  (progn
-    (set-face-attribute
-     'default nil
-     :font (font-spec :name "-*-Fira Code-normal-normal-normal-*-*-*-*-*-m-0-iso10646-1"
-                      :weight 'normal
-                      :slant 'normal
-                      :size 12.5))
-    (dolist (charset '(kana han symbol cjk-misc bopomofo))
-      (set-fontset-font
-       (frame-parameter nil 'font)
-       charset
-       (font-spec :name "-*-Hiragino Sans GB-normal-normal-normal-*-*-*-*-*-p-0-iso10646-1"
-		  :weight 'normal
-		  :slant 'normal
-		  :size 14.0)))))
+;; (unless (eq system-type 'windows-nt)
+;;   (progn
+;;     (set-face-attribute
+;;      'default nil
+;;      :font (font-spec :name "-*-Fira Code-normal-normal-normal-*-*-*-*-*-m-0-iso10646-1"
+;;                       :weight 'normal
+;;                       :slant 'normal
+;;                       :size 12.5))
+;;     (dolist (charset '(kana han symbol cjk-misc bopomofo))
+;;       (set-fontset-font
+;;        (frame-parameter nil 'font)
+;;        charset
+;;        (font-spec :name "-*-Hiragino Sans GB-normal-normal-normal-*-*-*-*-*-p-0-iso10646-1"
+;; 		  :weight 'normal
+;; 		  :slant 'normal
+;; 		  :size 14.0)))))
 
 
 

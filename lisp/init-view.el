@@ -7,10 +7,12 @@
   (setq make-backup-files nil)
   (setq ring-bell-function 'ignore)
   (setq display-line-numbers-type t)
-  (global-display-line-numbers-mode t)
   (show-paren-mode 1)
   (global-hl-line-mode 1)
-  (scroll-bar-mode -1))
+  (scroll-bar-mode -1)
+  :init
+  (add-hook 'prog-mode-hook #'display-line-numbers-mode)
+  (add-hook 'text-mode-hook #'display-line-numbers-mode))
 
 (use-package modus-themes
   :config)
@@ -21,6 +23,31 @@
   :config)
 
 (load-theme 'modus-operandi t)
+
+(use-package hide-mode-line)
+
+(use-package dired-sidebar
+  :bind (("M-1" . dired-sidebar-toggle-sidebar))
+  :ensure t
+  :commands (dired-sidebar-toggle-sidebar)
+  :init
+  (add-hook 'dired-sidebar-mode-hook
+            (lambda ()
+              (unless (file-remote-p default-directory)
+                (auto-revert-mode))
+	      (hide-mode-line-mode)
+	      (display-line-numbers-mode -1)))
+  :config
+  (setq vscode-icon-size 16)
+  (push 'toggle-window-split dired-sidebar-toggle-hidden-commands)
+  (push 'rotate-windows dired-sidebar-toggle-hidden-commands)
+
+  (setq dired-sidebar-subtree-line-prefix "__")
+  (setq dired-sidebar-theme 'vscode)
+  (setq dired-sidebar-use-term-integration t)
+  (setq dired-sidebar-use-custom-font t))
+
+
 
 
 (use-package doom-modeline

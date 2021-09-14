@@ -1,6 +1,7 @@
 (use-package magit
-  :bind
-  (("M-k" . #'magit-status)))
+  :ensure t
+  :defer t
+  :bind)
 
 (use-package git-gutter
   :config

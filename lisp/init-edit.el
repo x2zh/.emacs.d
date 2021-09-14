@@ -5,6 +5,7 @@
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 
 (use-package expand-region
+  :defer t
   :bind
   (("M-=" . 'er/expand-region)))
 
@@ -50,7 +51,8 @@
   :config
   (define-key undo-tree-visualizer-mode-map (kbd "RET") 'undo-tree-visualizer-quit))
 
-(use-package atomic-chrome)
+(use-package atomic-chrome
+  :defer t)
 
 (use-package hungry-delete
   :config

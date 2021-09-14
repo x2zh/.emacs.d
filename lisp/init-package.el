@@ -16,6 +16,7 @@
 
 (if (eq system-type 'darwin)
     (use-package exec-path-from-shell
+      :defer t
       :init (exec-path-from-shell-initialize)))
 
 

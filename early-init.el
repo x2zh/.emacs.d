@@ -1,5 +1,4 @@
 ;; -*- lexical-binding: t;-*-
-;;(add-to-list 'default-frame-alist '(font . "Fira Code-13"))
 
 (setq default-frame-alist
       '((top . 50)

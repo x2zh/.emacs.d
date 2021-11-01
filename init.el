@@ -4,8 +4,8 @@
 
 ;;; Code:
 ;;; hello
-(setq package-archives '(("gnu"   . "http://mirrors.tuna.tsinghua.edu.cn/elpa/gnu/")
-                         ("melpa" . "http://mirrors.tuna.tsinghua.edu.cn/elpa/melpa/")))
+;; (setq package-archives '(("gnu"   . "http://mirrors.tuna.tsinghua.edu.cn/elpa/gnu/")
+;;                          ("melpa" . "http://elpa.zilongshanren.com/melpa/")))
 (package-initialize)
 (add-to-list 'load-path "~/.emacs.d/lisp/")
 
@@ -13,14 +13,10 @@
 (defconst *is-mac (eq system-type 'darwin))
 
 (setq gc-cons-threshold (* 50 1000 1000))
-;; 做一个测试
-(require 'init-package)
 
+(require 'init-package)
 (require 'init-basic)
-(require 'init-edit)
-(require 'init-modal)
 (require 'init-pl)
-;; (require 'init-ivy-pack)
 (require 'init-vertico-pack)
 
 ;; windows 平台的特殊配置
@@ -33,18 +29,8 @@
 ;; 基本的样式和主题配置
 (require 'init-view)
 (require 'init-tools)
-
-
 (require 'init-vc)
-
-;; (require 'init-mini-frame)
 (use-package restart-emacs)
-
-
-(use-package esup
-  :ensure t
-  :pin melpa)
-
 
 ;; window mangement
 (if (>= emacs-major-version 28)
@@ -58,7 +44,7 @@
 	  (window-height . 0.382)
 	  (side . bottom)
 	  (slot . -1))
-	 ("\\*\\(BackTrace\\|Warnings\\|Compile-Log\\|[Hh]elp\\|Messages\\)\\*"
+	 ("\\*\\(BackTrace\\|Warnings\\|Compile-Log\\|[Hh]elp\\|Messages\\|vterm\\)\\*"
 	  (display-buffer-in-side-window)
 	  (window-height . 0.382)
 	  (side . bottom)
@@ -80,10 +66,6 @@
   (which-key-mode 1)
   (which-key-setup-minibuffer))
 
-;; Buffer Management
-(use-package ibuffer
-  :bind (("C-x C-b" . ibuffer)))
-
 (use-package avy
   :bind (("s-." . avy-goto-char)))
 
@@ -101,7 +83,7 @@
   (setq custom-file custom-file-path)
   (load custom-file))
 
-;;(setq gc-cons-threshold (* 2 1000 1000))
+
 (provide 'init)
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 ;;; init.el ends here

@@ -5,7 +5,7 @@
   (add-hook 'prog-mode-hook #'display-line-numbers-mode)
   (add-hook 'text-mode-hook #'display-line-numbers-mode))
 
-(set-frame-font "Sarasa Mono SC:pixelsize=12:weight=regular:slant=normal:width=normal:spacing=100:scalable=true" nil t)
+(set-frame-font "Sarasa Mono SC:pixelsize=14:weight=regular:slant=normal:width=normal:spacing=100:scalable=true" nil t)
 
 (add-hook 'after-init-hook
 	  (lambda ()

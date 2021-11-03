@@ -6,6 +6,8 @@
 ;;; hello
 ;; (setq package-archives '(("gnu"   . "http://mirrors.tuna.tsinghua.edu.cn/elpa/gnu/")
 ;;                          ("melpa" . "http://elpa.zilongshanren.com/melpa/")))
+(require 'package)
+(add-to-list 'package-archives '("melpa" . "https://melpa.org/packages/") t)
 (package-initialize)
 (add-to-list 'load-path "~/.emacs.d/lisp/")
 

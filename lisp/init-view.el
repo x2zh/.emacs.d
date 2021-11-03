@@ -26,13 +26,16 @@
 (use-package gruvbox-theme
   :config)
 
-(load-theme 'modus-operandi t)
+(load-theme 'doom-one t)
 
 (use-package hide-mode-line)
 
+(defun my-doom-modeline--font-height (x) 25)
+(advice-add 'doom-modeline--font-height :filter-return #'my-doom-modeline--font-height)
 (use-package doom-modeline
   :config
   (setq doom-modeline-icon t)
+  (setq doom-modeline-height 25)  
   :hook (after-init . doom-modeline-mode))
 
 (provide 'init-view)

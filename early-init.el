@@ -5,5 +5,5 @@
 	(left . 350)
         (width . 150)
 	(height . 50)))
+;;(tool-bar-mode -1)
 
-(tool-bar-mode -1)

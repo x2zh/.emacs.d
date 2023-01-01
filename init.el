@@ -3,9 +3,6 @@
 ;;; Emacs Startup File --- initialization fro Emacs
 
 ;;; Code:
-;;; hello
-;; (setq package-archives '(("gnu"   . "http://mirrors.tuna.tsinghua.edu.cn/elpa/gnu/")
-;;                          ("melpa" . "http://elpa.zilongshanren.com/melpa/")))
 (require 'package)
 (add-to-list 'package-archives '("melpa" . "https://melpa.org/packages/") t)
 (package-initialize)
@@ -16,69 +13,31 @@
 
 (setq gc-cons-threshold (* 50 1000 1000))
 
-(require 'init-package)
-(require 'init-basic)
-(require 'init-pl)
+;; 初始化包管理器: use-package
+(require 'init-package-system)
+
+;; 初始化操作系统相关垫片
+(require 'init-os-polyfill)
+
+;; 初始化基本编辑器
+(require 'init-basic-editor)
+
+;; 窗口和buffer管理配置
+(require 'init-window-and-buffer)
+
+;; 初始化 mini buffer
 (require 'init-vertico-pack)
 
-;; windows 平台的特殊配置
-(if *is-windows
-    (require 'init-windows-nt))
-
-;; org-mode 配置
-(require 'init-org)
+;; 各种编程语言和文本语言配置
+(require 'init-pl)
 
 ;; 基本的样式和主题配置
 (require 'init-view)
+
+;; 各种工具
 (require 'init-tools)
-(require 'init-vc)
-(use-package restart-emacs)
 
-;; window mangement
-(if (>= emacs-major-version 28)
-    (use-package window
-      :ensure nil
-      :custom
-      (display-buffer-alist
-       '(("\\*e?shell\\*"
-	  ;; note sample with more functions, executed sequentially
-	  (display-buffer-in-side-window)
-	  (window-height . 0.382)
-	  (side . bottom)
-	  (slot . -1))
-	 ("\\*\\(BackTrace\\|Warnings\\|Compile-Log\\|[Hh]elp\\|Messages\\|vterm\\)\\*"
-	  (display-buffer-in-side-window)
-	  (window-height . 0.382)
-	  (side . bottom)
-	  (slot . 1))))))
-
-
-(use-package ace-window
-  :bind (("M-o" . ace-window)))
-
-(use-package winner
-  :ensure nil
-  :hook (after-init . winner-mode)
-  :bind (("<s-right>" . winner-redo)
-	 ("<s-left>" . winner-undo)))
-
-
-(use-package which-key
-  :config
-  (which-key-mode 1)
-  (which-key-setup-minibuffer))
-
-(use-package avy
-  :bind (("s-." . avy-goto-char)))
-
-(use-package crux
-  :ensure t
-  :bind
-  (("C-a" . crux-move-beginning-of-line)
-   ("s-;" . crux-find-user-init-file)))
-
-(global-set-key (kbd "<f5>") 'eval-buffer)
-
+;; emacs配置工具保存的配置文件
 (let ((custom-file-path "~/.emacs.d/emacs-custom.el"))
   (unless (file-exists-p custom-file-path)
     (with-temp-file custom-file-path))

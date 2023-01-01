@@ -1,7 +1,5 @@
 ;; -*- lexical-binding: t; -*-
 
-
-
 (use-package vertico
   :ensure t
   :config
@@ -85,11 +83,8 @@
 
 
 (use-package embark
-  :ensure t
-
   :bind
-  (("C-S-a" . embark-act)       ;; pick some comfortable binding
-   ("C-h B" . embark-bindings)) ;; alternative for `describe-bindings'
+  (("C-." . embark-act))
 
   :init
 
@@ -122,5 +117,10 @@
   :config
   (recentf-mode 1)
   (consult-customize consult-buffer :preview-key (kbd "M-.")))
+
+(use-package which-key
+  :config
+  (which-key-mode 1)
+  (which-key-setup-minibuffer))
 
 (provide 'init-vertico-pack)

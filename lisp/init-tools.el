@@ -7,14 +7,9 @@
 		auto-mode-alist)))
 
 
-(use-package youdao-dictionary
-  :defer t
-  :bind
-  ("<f6>" . 'youdao-dictionary-search-at-point-posframe))
+(use-package restart-emacs)
 
-;;; used by youdao-dictionary
-(use-package posframe
-  :ensure t
+(use-package magit
   :defer t)
 
 (provide 'init-tools)

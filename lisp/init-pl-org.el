@@ -6,4 +6,4 @@
   (add-hook 'org-mode-hook 'org-indent-mode)
   (setq org-log-done 'note))
 
-(provide 'init-org)
+(provide 'init-pl-org)

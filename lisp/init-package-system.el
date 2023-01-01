@@ -14,13 +14,8 @@
 (require 'use-package)
 (setq use-package-always-ensure t)
 
-(if (eq system-type 'darwin)
-    (use-package exec-path-from-shell
-      :defer t
-      :init (exec-path-from-shell-initialize)))
 
-
-(provide 'init-package)
+(provide 'init-package-system)
 
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 ;;; init-package.el ends here

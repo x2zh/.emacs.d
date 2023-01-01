@@ -7,6 +7,7 @@
 (add-to-list 'package-archives '("melpa" . "https://melpa.org/packages/") t)
 (package-initialize)
 (add-to-list 'load-path "~/.emacs.d/lisp/")
+(add-to-list 'load-path "~/.emacs.d/site-lisp/key-chord")
 
 (defconst *is-windows (eq system-type 'windows-nt))
 (defconst *is-mac (eq system-type 'darwin))

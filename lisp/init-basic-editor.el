@@ -28,4 +28,13 @@
                    name (file-name-nondirectory new-name)))))))
 (global-set-key (kbd "<f6>") 'rename-current-buffer-file)
 
+
+(use-package multiple-cursors)
+(require 'multiple-cursors)
+(require 'key-chord)
+(key-chord-mode 1)
+(key-chord-define-global "ml" 'mc/edit-lines)
+(key-chord-define-global "mk" 'mc/mark-next-like-this-word) 
+ 
+
 (provide 'init-basic-editor)

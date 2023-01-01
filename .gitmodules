@@ -1,0 +1,3 @@
+[submodule "site-lisp/key-chord"]
+	path = site-lisp/key-chord
+	url = git@github.com:x2zh/key-chord.git

@@ -85,14 +85,13 @@
 (use-package embark
   :bind
   (("C-." . embark-act))
-
+  
   :init
-
   ;; Optionally replace the key help with a completing-read interface
   (setq prefix-help-command #'embark-prefix-help-command)
 
   :config
-
+  (define-key embark-general-map "t" #'youdao-dictionary-search-at-point)
   ;; Hide the mode line of the Embark live/completions buffers
   (add-to-list 'display-buffer-alist
                '("\\`\\*Embark Collect \\(Live\\|Completions\\)\\*"

@@ -6,6 +6,7 @@
 	(append '(("\\.http\\'" . restclient-mode))
 		auto-mode-alist)))
 
+(use-package youdao-dictionary)
 
 (use-package restart-emacs)
 

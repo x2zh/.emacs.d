@@ -10,7 +10,7 @@
 	  (window-height . 0.382)
 	  (side . bottom)
 	  (slot . -1))
-	 ("\\*\\(BackTrace\\|Warnings\\|Compile-Log\\|[Hh]elp\\|Messages\\|vterm\\)\\*"
+	 ("\\*\\(BackTrace\\|Warnings\\|Compile-Log\\|[Hh]elp\\|Messages\\|vterm\\|Youdao Dictionary\\)\\*"
 	  (display-buffer-in-side-window)
 	  (window-height . 0.382)
 	  (side . bottom)

@@ -16,7 +16,7 @@
 	    (setq display-line-numbers-type t)
 	    (show-paren-mode 1)
 	    (global-hl-line-mode 1)
-	    (scroll-bar-mode -1)))
+x	    (scroll-bar-mode -1)))
 
 (use-package modus-themes
   :config)
@@ -30,14 +30,8 @@
 
 (use-package hide-mode-line)
 
-(defun my-doom-modeline--font-height (x) 25)
-(advice-add 'doom-modeline--font-height :filter-return #'my-doom-modeline--font-height)
-(use-package doom-modeline
-  :config
-  (setq doom-modeline-icon t)
-  (setq doom-modeline-height 25)  
-  :hook (after-init . doom-modeline-mode))
-
+(require 'awesome-tray)
+(awesome-tray-mode 1)
 (provide 'init-view)
 
 

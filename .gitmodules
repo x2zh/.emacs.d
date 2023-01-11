@@ -1,3 +1,6 @@
 [submodule "site-lisp/key-chord"]
 	path = site-lisp/key-chord
 	url = git@github.com:x2zh/key-chord.git
+[submodule "site-lisp/awesome-tray"]
+	path = site-lisp/awesome-tray
+	url = https://github.com/manateelazycat/awesome-tray.git

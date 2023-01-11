@@ -8,6 +8,7 @@
 (package-initialize)
 (add-to-list 'load-path "~/.emacs.d/lisp/")
 (add-to-list 'load-path "~/.emacs.d/site-lisp/key-chord")
+(add-to-list 'load-path "~/.emacs.d/site-lisp/awesome-tray")
 
 (defconst *is-windows (eq system-type 'windows-nt))
 (defconst *is-mac (eq system-type 'darwin))
@@ -19,6 +20,9 @@
 
 ;; 初始化操作系统相关垫片
 (require 'init-os-polyfill)
+
+;; 基本的样式和主题配置
+(require 'init-view)
 
 ;; 初始化基本编辑器
 (require 'init-basic-editor)
@@ -32,8 +36,6 @@
 ;; 各种编程语言和文本语言配置
 (require 'init-pl)
 
-;; 基本的样式和主题配置
-(require 'init-view)
 
 ;; 各种工具
 (require 'init-tools)

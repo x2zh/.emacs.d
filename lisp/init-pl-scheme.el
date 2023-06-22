@@ -10,7 +10,7 @@
   (add-hook 'eval-expression-minibuffer-setup-hook #'paredit-mode))
 
 (require 'cmuscheme)
-(setq scheme-program-name "/usr/local/bin/scheme")
+(setq scheme-program-name "/usr/local/bin/chez")
 
 (defun scheme-proc ()
   "Return the current Scheme process, starting one if necessary."

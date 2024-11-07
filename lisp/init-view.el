@@ -14,9 +14,10 @@
 	    (setq make-backup-files nil)
 	    (setq ring-bell-function 'ignore)
 	    (setq display-line-numbers-type t)
+	    (setq-default cursor-type 'bar)
 	    (show-paren-mode 1)
 	    (global-hl-line-mode 1)
-	    ;(tool-bar-mode -1)
+	    (tool-bar-mode -1)
 	    ;(menu-bar-mode -1)
 	    ;(scroll-bar-mode -1)
 	    ))
@@ -29,7 +30,9 @@
 (use-package gruvbox-theme
   :config)
 
-(load-theme 'modus-vivendi t)
+;;(load-theme 'modus-vivendi t)
+
+(load-theme 'modus-operandi t)
 
 (use-package hide-mode-line)
 
